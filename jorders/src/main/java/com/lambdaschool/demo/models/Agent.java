@@ -1,5 +1,6 @@
 package com.lambdaschool.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -26,6 +27,7 @@ public class Agent {
     @OneToMany(mappedBy = "agent",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
+    @JsonIgnoreProperties("agent")
     private List<Customer> customerList = new ArrayList<>();
 
     public Agent(){

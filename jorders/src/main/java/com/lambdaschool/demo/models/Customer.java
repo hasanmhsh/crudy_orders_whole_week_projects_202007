@@ -36,6 +36,7 @@ public class Customer {
     @OneToMany(mappedBy = "customer",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
+    @JsonIgnoreProperties("customer")
     private List<Order> orderList = new ArrayList<>();
 
 

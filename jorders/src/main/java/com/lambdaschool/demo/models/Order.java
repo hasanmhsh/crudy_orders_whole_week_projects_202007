@@ -36,7 +36,7 @@ public class Order {
 
     }
 
-    public Order(double advanceAmount, double ordAmount, Customer customer, String orderDescription) {
+    public Order(double ordAmount, double advanceAmount, Customer customer, String orderDescription) {
         this.advanceAmount = advanceAmount;
         this.ordAmount = ordAmount;
         this.orderDescription = orderDescription;

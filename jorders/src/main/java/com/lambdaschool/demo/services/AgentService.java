@@ -1,4 +1,7 @@
 package com.lambdaschool.demo.services;
 
-public class AgentService {
+import com.lambdaschool.demo.models.Agent;
+
+public interface AgentService {
+    public Agent findAgentByCode(long code);
 }
