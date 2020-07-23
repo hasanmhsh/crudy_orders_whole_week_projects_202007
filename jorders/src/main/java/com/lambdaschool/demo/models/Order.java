@@ -14,65 +14,65 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long ordNum;
+    private long ordnum;
 
-    private double advanceAmount;
-    private double ordAmount;
-    private String orderDescription;
+    private double advanceamount;
+    private double ordamount;
+    private String orderdescription;
 
     @ManyToOne
-    @JoinColumn(name = "custCode",
+    @JoinColumn(name = "custcode",
             nullable = false)
-    @JsonIgnoreProperties("orderList")
+    @JsonIgnoreProperties("orders")
     private Customer customer;
 
     @ManyToMany()
     @JoinTable(name = "orderspayments",
-            joinColumns = @JoinColumn(name = "ordNum"),
-            inverseJoinColumns = @JoinColumn(name = "paymentId"))
+            joinColumns = @JoinColumn(name = "ordnum"),
+            inverseJoinColumns = @JoinColumn(name = "paymentid"))
     @JsonIgnoreProperties("orders")
     Set<Payment> payments = new HashSet<>();
     public Order(){
 
     }
 
-    public Order(double ordAmount, double advanceAmount, Customer customer, String orderDescription) {
-        this.advanceAmount = advanceAmount;
-        this.ordAmount = ordAmount;
-        this.orderDescription = orderDescription;
+    public Order(double ordamount, double advanceamount, Customer customer, String orderdescription) {
+        this.advanceamount = advanceamount;
+        this.ordamount = ordamount;
+        this.orderdescription = orderdescription;
         this.customer = customer;
     }
 
-    public long getOrdNum() {
-        return ordNum;
+    public long getOrdnum() {
+        return ordnum;
     }
 
-    public void setOrdNum(long ordNum) {
-        this.ordNum = ordNum;
+    public void setOrdnum(long ordnum) {
+        this.ordnum = ordnum;
     }
 
-    public double getAdvanceAmount() {
-        return advanceAmount;
+    public double getAdvanceamount() {
+        return advanceamount;
     }
 
-    public void setAdvanceAmount(double advanceAmount) {
-        this.advanceAmount = advanceAmount;
+    public void setAdvanceamount(double advanceamount) {
+        this.advanceamount = advanceamount;
     }
 
-    public double getOrdAmount() {
-        return ordAmount;
+    public double getOrdamount() {
+        return ordamount;
     }
 
-    public void setOrdAmount(double ordAmount) {
-        this.ordAmount = ordAmount;
+    public void setOrdamount(double ordamount) {
+        this.ordamount = ordamount;
     }
 
-    public String getOrderDescription() {
-        return orderDescription;
+    public String getOrderdescription() {
+        return orderdescription;
     }
 
-    public void setOrderDescription(String orderDescription) {
-        this.orderDescription = orderDescription;
+    public void setOrderdescription(String orderdescription) {
+        this.orderdescription = orderdescription;
     }
 
     public Customer getCustomer() {

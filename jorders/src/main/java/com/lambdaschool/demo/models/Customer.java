@@ -12,92 +12,92 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long custCode;
+    private long custcode;
 
     @Column(nullable = false)
-    private String custName;
+    private String custname;
 
-    private String custCity;
-    private String custCountry;
+    private String custcity;
+    private String custcountry;
     private String grade;
-    private double openingAmt;
-    private double outstandingAmt;
-    private double paymentAmt;
+    private double openingamt;
+    private double outstandingamt;
+    private double paymentamt;
     private String phone;
-    private double receiveAmt;
-    private String workingArea;
+    private double receiveamt;
+    private String workingarea;
 
     @ManyToOne
-    @JoinColumn(name = "agentCode",
+    @JoinColumn(name = "agentcode",
             nullable = false)
-    @JsonIgnoreProperties("customerList")
+    @JsonIgnoreProperties("customers")
     private Agent agent;
 
     @OneToMany(mappedBy = "customer",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     @JsonIgnoreProperties("customer")
-    private List<Order> orderList = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
 
 
     public Customer(){
 
     }
 
-    public Customer(String custName,
-                    String workingArea,
-                    String custCity,
-                    String custCountry,
+    public Customer(String custname,
+                    String workingarea,
+                    String custcity,
+                    String custcountry,
                     String grade,
-                    double openingAmt,
-                    double outstandingAmt,
-                    double paymentAmt,
-                    double receiveAmt,
+                    double openingamt,
+                    double outstandingamt,
+                    double paymentamt,
+                    double receiveamt,
                     String phone,
                     Agent agent) {
-        this.custName = custName;
-        this.custCity = custCity;
-        this.custCountry = custCountry;
+        this.custname = custname;
+        this.custcity = custcity;
+        this.custcountry = custcountry;
         this.grade = grade;
-        this.openingAmt = openingAmt;
-        this.outstandingAmt = outstandingAmt;
-        this.paymentAmt = paymentAmt;
+        this.openingamt = openingamt;
+        this.outstandingamt = outstandingamt;
+        this.paymentamt = paymentamt;
         this.phone = phone;
-        this.receiveAmt = receiveAmt;
-        this.workingArea = workingArea;
+        this.receiveamt = receiveamt;
+        this.workingarea = workingarea;
         this.agent = agent;
     }
 
-    public long getCustCode() {
-        return custCode;
+    public long getCustcode() {
+        return custcode;
     }
 
-    public void setCustCode(long custCode) {
-        this.custCode = custCode;
+    public void setCustcode(long custcode) {
+        this.custcode = custcode;
     }
 
-    public String getCustName() {
-        return custName;
+    public String getCustname() {
+        return custname;
     }
 
-    public void setCustName(String custName) {
-        this.custName = custName;
+    public void setCustname(String custname) {
+        this.custname = custname;
     }
 
-    public String getCustCity() {
-        return custCity;
+    public String getCustcity() {
+        return custcity;
     }
 
-    public void setCustCity(String custCity) {
-        this.custCity = custCity;
+    public void setCustcity(String custcity) {
+        this.custcity = custcity;
     }
 
-    public String getCustCountry() {
-        return custCountry;
+    public String getCustcountry() {
+        return custcountry;
     }
 
-    public void setCustCountry(String custCountry) {
-        this.custCountry = custCountry;
+    public void setCustcountry(String custcountry) {
+        this.custcountry = custcountry;
     }
 
     public String getGrade() {
@@ -108,28 +108,28 @@ public class Customer {
         this.grade = grade;
     }
 
-    public double getOpeningAmt() {
-        return openingAmt;
+    public double getOpeningamt() {
+        return openingamt;
     }
 
-    public void setOpeningAmt(double openingAmt) {
-        this.openingAmt = openingAmt;
+    public void setOpeningamt(double openingamt) {
+        this.openingamt = openingamt;
     }
 
-    public double getOutstandingAmt() {
-        return outstandingAmt;
+    public double getOutstandingamt() {
+        return outstandingamt;
     }
 
-    public void setOutstandingAmt(double outstandingAmt) {
-        this.outstandingAmt = outstandingAmt;
+    public void setOutstandingamt(double outstandingamt) {
+        this.outstandingamt = outstandingamt;
     }
 
-    public double getPaymentAmt() {
-        return paymentAmt;
+    public double getPaymentamt() {
+        return paymentamt;
     }
 
-    public void setPaymentAmt(double paymentAmt) {
-        this.paymentAmt = paymentAmt;
+    public void setPaymentamt(double paymentamt) {
+        this.paymentamt = paymentamt;
     }
 
     public String getPhone() {
@@ -140,20 +140,20 @@ public class Customer {
         this.phone = phone;
     }
 
-    public double getReceiveAmt() {
-        return receiveAmt;
+    public double getReceiveamt() {
+        return receiveamt;
     }
 
-    public void setReceiveAmt(double receiveAmt) {
-        this.receiveAmt = receiveAmt;
+    public void setReceiveamt(double receiveamt) {
+        this.receiveamt = receiveamt;
     }
 
-    public String getWorkingArea() {
-        return workingArea;
+    public String getWorkingarea() {
+        return workingarea;
     }
 
-    public void setWorkingArea(String workingArea) {
-        this.workingArea = workingArea;
+    public void setWorkingarea(String workingarea) {
+        this.workingarea = workingarea;
     }
 
     public Agent getAgent() {
@@ -164,11 +164,11 @@ public class Customer {
         this.agent = agent;
     }
 
-    public List<Order> getOrderList() {
-        return orderList;
+    public List<Order> getOrders() {
+        return orders;
     }
 
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
+    public void setOrders(List<Order> orderList) {
+        this.orders = orderList;
     }
 }

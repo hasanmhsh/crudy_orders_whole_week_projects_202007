@@ -1,7 +1,6 @@
 package com.lambdaschool.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,49 +12,49 @@ public class Agent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long agentCode;
+    private long agentcode;
 
     @Column(nullable = false)
-    private String agentName;
+    private String agentname;
 
     private double commision;
 
     private String country;
     private String phone;
-    private String workingArea;
+    private String workingarea;
 
     @OneToMany(mappedBy = "agent",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     @JsonIgnoreProperties("agent")
-    private List<Customer> customerList = new ArrayList<>();
+    private List<Customer> customers = new ArrayList<>();
 
     public Agent(){
 
     }
 
     public Agent(String agentname, String country, double commision, String phone, String workingarea) {
-        this.agentName = agentname;
+        this.agentname = agentname;
         this.commision = commision;
         this.country = country;
         this.phone = phone;
-        this.workingArea = workingarea;
+        this.workingarea = workingarea;
     }
 
-    public long getAgentCode() {
-        return agentCode;
+    public long getAgentcode() {
+        return agentcode;
     }
 
-    public void setAgentCode(long agentCode) {
-        this.agentCode = agentCode;
+    public void setAgentcode(long agentcode) {
+        this.agentcode = agentcode;
     }
 
-    public String getAgentName() {
-        return agentName;
+    public String getAgentname() {
+        return agentname;
     }
 
-    public void setAgentName(String agentName) {
-        this.agentName = agentName;
+    public void setAgentname(String agentname) {
+        this.agentname = agentname;
     }
 
     public double getCommision() {
@@ -82,20 +81,20 @@ public class Agent {
         this.phone = phone;
     }
 
-    public String getWorkingArea() {
-        return workingArea;
+    public String getWorkingarea() {
+        return workingarea;
     }
 
-    public void setWorkingArea(String workingArea) {
-        this.workingArea = workingArea;
+    public void setWorkingarea(String workingarea) {
+        this.workingarea = workingarea;
     }
 
-    public List<Customer> getCustomerList() {
-        return customerList;
+    public List<Customer> getCustomers() {
+        return customers;
     }
 
-    public void setCustomerList(List<Customer> customerList) {
-        this.customerList = customerList;
+    public void setCustomers(List<Customer> customerList) {
+        this.customers = customerList;
     }
 
 

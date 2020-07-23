@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface OrderRepository extends CrudRepository<Order, Long> {
 
-    public List<Order> findByAdvanceAmountGreaterThan(double number);
+    public List<Order> findByAdvanceamountGreaterThan(double number);
 }
