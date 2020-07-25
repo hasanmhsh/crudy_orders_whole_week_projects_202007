@@ -86,6 +86,7 @@ public class OrderServiceImpl implements OrderService {
         else{//replace existing order
         }
 
+        newOrder.setOrdamount(order.getOrdamount());
         newOrder.setAdvanceamount(order.getAdvanceamount());
         newOrder.setOrderdescription(order.getOrderdescription());
 
